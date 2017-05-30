@@ -1,0 +1,246 @@
+/*********************
+TOOLS
+*********************/
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700);
+.image-replacement {
+  border: 0;
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent !important;
+  background-color: transparent;
+}
+/**
+ * this is to prevent browser reflow
+ * http://andmag.se/2012/10/responsive-images-how-to-prevent-reflow/
+ * To be used with a containing element like so:
+
+  container {
+      width: 100%;
+      position: relative;
+      padding-bottom: @img-logo-ratio; e.g. (84%/407%*100%); //(height/width*100)
+      display: block;
+
+      img {
+        .image-conform
+      }
+  }
+* 
+*/
+.image-conform {
+  max-width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+.bg-img-cover {
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+/*********************
+CLEARFIXIN'
+*********************/
+/* Contain floats: nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix {
+  zoom: 1;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+/*********************
+INPUT BOX PLACEHOLDER
+*********************/
+/*********************
+BORDER RADIUS
+*********************/
+/* .borderRadius(4px); */
+/* .borderRadius-left(4px); */
+/* .borderRadius-right(4px); */
+/* .borderRadius-bottom(4px); */
+/* .borderRadius-top(4px); */
+/*********************
+TRANISTION
+*********************/
+/* .transition(all,2s); */
+/*********************
+CSS3 GRADIENTS
+Be careful with these since they can 
+really slow down your CSS. Don't overdue it.
+*********************/
+/* .css-gradient(#dfdfdf,#f8f8f8); */
+/*********************
+BOX SIZING
+*********************/
+/* .boxSizing(border-box); */
+/*********************
+BOX SHADOW
+*********************/
+/* .boxShadow(0 0 4px #444); */
+/*********************
+Colors
+*********************/
+/**
+ * These are the hue values for use in the vars below
+ * If you want to use one-offs of shared colors,
+ * it's best to use less's color functions
+ * to adjust the saturation, lightness, and alpha.
+ */
+/*********************
+Fonts
+*********************/
+.sans-serif {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.serif {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+/*********************
+Strings
+*********************/
+/*********************
+Integers
+*********************/
+.768up {
+  /*********************
+Text Styles
+*********************/
+  /*********************
+Containers
+*********************/
+}
+.768up html {
+  font-size: 74%;
+}
+.1030up {
+  /*********************
+Containers
+*********************/
+}
+.1030up html {
+  font-size: 100%;
+}
+.1400up {
+  /*********************
+Containers
+*********************/
+}
+.1400up html {
+  font-size: 130%;
+}
+/******************************************************************
+TABLET & SMALLER LAPTOPS
+******************************************************************/
+@media only screen and (min-width: 768px) {
+  /* styles in 768up.less */
+  /*********************
+Text Styles
+*********************/
+  html {
+    font-size: 74%;
+  }
+  /*********************
+Containers
+*********************/
+}
+/* end of media query */
+/******************************************************************
+DESKTOP 
+******************************************************************/
+@media only screen and (min-width: 1030px) {
+  /* styles in 1030up.less */
+  html {
+    font-size: 100%;
+  }
+  /*********************
+Containers
+*********************/
+}
+/* end of media query */
+/******************************************************************
+LARGE VIEWING SIZE 
+******************************************************************/
+@media only screen and (min-width: 1400px) {
+  /* styles in 1240up.less */
+  html {
+    font-size: 130%;
+  }
+  /*********************
+Containers
+*********************/
+}
+/* end of media query */
+/******************************************************************
+PRINT STYLESHEET
+******************************************************************/
+@media print {
+  * {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+  a,
+  a:visited {
+    color: #444 !important;
+    text-decoration: underline;
+    /* show links on printed pages */
+    /* show title too */
+  }
+  a:after,
+  a:visited:after {
+    content: " (" attr(href) ")";
+  }
+  a abbr[title]:after,
+  a:visited abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: "";
+  }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+  thead {
+    display: table-header-group;
+  }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+  img {
+    max-width: 100% !important;
+  }
+  @page {
+    margin: 0.5cm;
+  }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+  /* hide content people who print don't need to see */
+  .sidebar,
+  .page-navigation,
+  .wp-prev-next,
+  .respond-form,
+  nav {
+    display: none;
+  }
+}
